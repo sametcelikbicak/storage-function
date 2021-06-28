@@ -1,6 +1,13 @@
-export class StorageFunction {
+import { clearLocalStorage, fromLocalStorage, removeFromLocalStorage, toLocalStorage } from './local/index';
+import { clearSessionStorage, fromSessionStorage, removeFromSessionStorage, toSessionStorage } from './session';
 
-    public toLocalStorage():void{
-        localStorage.setItem("deneme","deneme kayıt");
-    }
-}
+export {
+  toLocalStorage,
+  fromLocalStorage,
+  removeFromLocalStorage,
+  clearLocalStorage,
+  toSessionStorage,
+  fromSessionStorage,
+  removeFromSessionStorage,
+  clearSessionStorage,
+};
