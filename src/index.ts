@@ -1,5 +1,6 @@
-import { clearLocalStorage, fromLocalStorage, removeFromLocalStorage, toLocalStorage } from './local/index';
-import { clearSessionStorage, fromSessionStorage, removeFromSessionStorage, toSessionStorage } from './session';
+import { clearStorage } from './storage';
+import { clearLocalStorage, fromLocalStorage, removeFromLocalStorage, toLocalStorage } from './storage/local';
+import { clearSessionStorage, fromSessionStorage, removeFromSessionStorage, toSessionStorage } from './storage/session';
 
 export {
   toLocalStorage,
@@ -10,4 +11,5 @@ export {
   fromSessionStorage,
   removeFromSessionStorage,
   clearSessionStorage,
+  clearStorage,
 };

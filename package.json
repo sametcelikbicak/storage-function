@@ -28,7 +28,8 @@
     "localStorage",
     "local storage",
     "front-end",
-    "frontend"],
+    "frontend"
+  ],
   "author": "Samet ÇELİKBIÇAK",
   "license": "MIT",
   "bugs": {
@@ -41,5 +42,7 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.3.4"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ]
 }
