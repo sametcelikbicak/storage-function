@@ -9,7 +9,7 @@ npm i storage-function
 
 ## Usage
 #### Local storage key and value definitions
-````
+````typescript
 const localStorageKey = "local_storage_key";
 
 const localStorageValue = {
@@ -22,33 +22,33 @@ const localStorageValue = {
 ````
 
 * toLocalStorage usage
-````
+````typescript
 import { toLocalStorage } from "storage-function";
 
 toLocalStorage(localStorageKey, localStorageValue);
 ````
 * fromLocalStorage usage
-````
+````typescript
 import { fromLocalStorage } from "storage-function";
 
 console.log(fromLocalStorage(localStorageKey));
 ````
 * fromLocalStorage usage
-````
+````typescript
 import { removeFromLocalStorage } from "storage-function";
 
 removeFromLocalStorage(localStorageKey);
 ````
 * clearLocalStorage usage
-````
+````typescript
 import { clearLocalStorage } from "storage-function";
 
 clearLocalStorage();
 ````
 ---
----
+
 #### Session storage key and value definitions
-````
+````typescript
 const sessionStorageKey = "session_storage_key";
 
 const sessionStorageValue = {
@@ -61,25 +61,25 @@ const sessionStorageValue = {
 ````
 
 * toSessionStorage usage
-````
+````typescript
 import { toSessionStorage } from "storage-function";
 
 toSessionStorage(sessionStorageKey, sessionStorageValue);
 ````
 * fromSessionStorage usage
-````
+````typescript
 import { fromSessionStorage } from "storage-function";
 
 console.log(fromSessionStorage(sessionStorageKey));
 ````
 * removeFromSessionStorage usage
-````
+````typescript
 import { removeFromSessionStorage } from "storage-function";
 
 removeFromSessionStorage(sessionStorageKey);
 ````
 * clearSessionStorage usage
-````
+````typescript
 import { clearSessionStorage } from "storage-function";
 
 clearSessionStorage();
