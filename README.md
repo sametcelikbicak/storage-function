@@ -6,3 +6,42 @@ A function to manipulate browser storages
 ```
 npm i storage-function
 ```
+
+## Usage
+Local storage key and value definitions
+````
+const localStorageKey = "local_storage_key";
+
+const localStorageValue = {
+    name: "object value",
+    stringValue: "string value",
+    booleanValue: true,
+    numberValue: 1234567890,
+    dateValue: new Date(),
+};
+````
+
+* toLocalStorage usage
+````
+import { toLocalStorage } from "storage-function";
+
+toLocalStorage(localStorageKey, localStorageValue);
+````
+* fromLocalStorage usage
+````
+import { fromLocalStorage } from "storage-function";
+
+console.log(fromLocalStorage(localStorageKey));
+````
+* fromLocalStorage usage
+````
+import { removeFromLocalStorage } from "storage-function";
+
+removeFromLocalStorage(localStorageKey);
+````
+* clearLocalStorage usage
+````
+import { clearLocalStorage } from "storage-function";
+
+clearLocalStorage();
+````
