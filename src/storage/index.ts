@@ -1,6 +1,6 @@
 /**
  * Remove all values from Local and Session storage
- *
+ * @param except - Except key or key list
  * @returns void
  */
 export function clearStorage(except?: string | string[]): void {
@@ -10,9 +10,29 @@ export function clearStorage(except?: string | string[]): void {
         removeFromStorage(except);
         break;
       case 'object':
-        except.forEach((exceptedKey) => {
-          removeFromStorage(exceptedKey);
-        });
+        const localStorageKeyList: string[] = [];
+        const sessionStorageKeyList: string[] = [];
+
+        for (let i = 0, len = localStorage.length; i < len; i++) {
+          localStorageKeyList.push(localStorage.key(i) ?? '');
+        }
+
+        for (let i = 0, len = sessionStorage.length; i < len; i++) {
+          sessionStorageKeyList.push(sessionStorage.key(i) ?? '');
+        }
+
+        localStorageKeyList
+          .filter((key) => !except.includes(key))
+          .forEach((key) => {
+            removeItemFromStorage(localStorage, key);
+          });
+
+        sessionStorageKeyList
+          .filter((key) => !except.includes(key))
+          .forEach((key) => {
+            removeItemFromStorage(sessionStorage, key);
+          });
+
         break;
     }
   } else {
