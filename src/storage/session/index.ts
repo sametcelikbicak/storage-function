@@ -32,8 +32,31 @@ export function removeFromSessionStorage(key: string): void {
 /**
  * Remove all values from Session storage
  *
+ * @param except - Except key or key list
  * @returns void
  */
-export function clearSessionStorage(): void {
-  sessionStorage.clear();
+export function clearSessionStorage(except?: string | string[]): void {
+  if (except) {
+    switch (typeof except) {
+      case 'string':
+        sessionStorage.removeItem(except);
+        break;
+      case 'object':
+        const sessionStorageKeyList: string[] = [];
+
+        for (let i = 0, len = sessionStorage.length; i < len; i++) {
+          sessionStorageKeyList.push(sessionStorage.key(i) ?? '');
+        }
+
+        sessionStorageKeyList
+          .filter((key) => !except.includes(key))
+          .forEach((key) => {
+            sessionStorage.removeItem(key);
+          });
+
+        break;
+    }
+  } else {
+    sessionStorage.clear();
+  }
 }
