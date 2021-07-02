@@ -84,3 +84,14 @@ import { clearSessionStorage } from "storage-function";
 
 clearSessionStorage();
 ````
+---
+#### Storage definition
+* clearStorage usage
+````typescript
+import { clearStorage } from "storage-function";
+
+clearStorage(); // Remove all storage keys
+
+const exceptedKeys=['id_token','access_token'];
+clearStorage(exceptedKeys); // Remove all storage keys except exceptedKeys
+````
