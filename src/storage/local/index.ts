@@ -31,8 +31,31 @@ export function removeFromLocalStorage(key: string): void {
 /**
  * Remove all values from Local storage
  *
+ * @param except - Except key or key list
  * @returns void
  */
-export function clearLocalStorage(): void {
-  localStorage.clear();
+export function clearLocalStorage(except?: string | string[]): void {
+  if (except) {
+    switch (typeof except) {
+      case 'string':
+        localStorage.removeItem(except);
+        break;
+      case 'object':
+        const localStorageKeyList: string[] = [];
+
+        for (let i = 0, len = localStorage.length; i < len; i++) {
+          localStorageKeyList.push(localStorage.key(i) ?? '');
+        }
+
+        localStorageKeyList
+          .filter((key) => !except.includes(key))
+          .forEach((key) => {
+            localStorage.removeItem(key);
+          });
+
+        break;
+    }
+  } else {
+    localStorage.clear();
+  }
 }
