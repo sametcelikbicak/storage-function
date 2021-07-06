@@ -38,7 +38,7 @@ export function clearLocalStorage(except?: string | string[]): void {
   if (except) {
     switch (typeof except) {
       case 'string':
-        localStorage.removeItem(except);
+        removeFromStorage(except);
         break;
       case 'object':
         const localStorageKeyList: string[] = [];
@@ -57,5 +57,14 @@ export function clearLocalStorage(except?: string | string[]): void {
     }
   } else {
     localStorage.clear();
+  }
+}
+
+function removeFromStorage(except: string) {
+  for (let i = 0, len = localStorage.length; i < len; i++) {
+    const removeableKey = localStorage.key(i) ?? '';
+    if (!removeableKey.includes(except)) {
+      localStorage.removeItem(removeableKey);
+    }
   }
 }
