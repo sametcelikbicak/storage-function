@@ -20,24 +20,40 @@ describe('toLocalStorage', () => {
     expect(JSON.parse(result)).toEqual(value);
   });
 
-
-  it("should be updated existing key value", () => {
-    const key = "StorageKey";
+  it('should be updated existing key value', () => {
+    const key = 'StorageKey';
     const value = 'Storage Value';
-    const newValue = "New storage value";
+    const newValue = 'New storage value';
     toLocalStorage(key, value);
 
     toLocalStorage(key, newValue);
     const result = fromLocalStorage(key);
-    
-    expect(JSON.parse(result)).toEqual(newValue);
-});
 
+    expect(JSON.parse(result)).toEqual(newValue);
+  });
 });
 
 describe('fromLocalStorage', () => {
   it('should be defined', () => {
     expect(fromLocalStorage).toBeDefined();
+  });
+
+  it('should be return item when given existing key', () => {
+    const key = 'StorageKey';
+    const value = 'Storage Value';
+    toLocalStorage(key, value);
+
+    const result = fromLocalStorage(key);
+
+    expect(JSON.parse(result)).toEqual(value);
+  });
+
+  it('should be return null when given non existing key', () => {
+    const key = 'NonStorageKey';
+
+    const result = fromLocalStorage(key);
+
+    expect(result).toBeNull();
   });
 });
 
