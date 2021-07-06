@@ -6,7 +6,7 @@
  * @returns void
  */
 export function toSessionStorage(key: string, value: any): void {
-  sessionStorage.setItem(key, value);
+  sessionStorage.setItem(key, JSON.stringify(value));
 }
 
 /**
@@ -16,7 +16,7 @@ export function toSessionStorage(key: string, value: any): void {
  * @returns Stored value
  */
 export function fromSessionStorage(key: string): any {
-  sessionStorage.getItem(key);
+  return sessionStorage.getItem(key);
 }
 
 /**
@@ -39,7 +39,7 @@ export function clearSessionStorage(except?: string | string[]): void {
   if (except) {
     switch (typeof except) {
       case 'string':
-        sessionStorage.removeItem(except);
+        removeFromStorage(except);
         break;
       case 'object':
         const sessionStorageKeyList: string[] = [];
@@ -58,5 +58,14 @@ export function clearSessionStorage(except?: string | string[]): void {
     }
   } else {
     sessionStorage.clear();
+  }
+}
+
+function removeFromStorage(except: string) {
+  for (let i = 0, len = sessionStorage.length; i < len; i++) {
+    const removeableKey = sessionStorage.key(i) ?? '';
+    if (!removeableKey.includes(except)) {
+      sessionStorage.removeItem(removeableKey);
+    }
   }
 }
