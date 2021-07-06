@@ -6,7 +6,7 @@
  * @returns void
  */
 export function toSessionStorage(key: string, value: any): void {
-  sessionStorage.setItem(key, value);
+  sessionStorage.setItem(key, JSON.stringify(value));
 }
 
 /**
