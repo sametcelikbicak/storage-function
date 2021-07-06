@@ -5,6 +5,10 @@ import {
   toLocalStorage,
 } from '../../../src/storage/local';
 
+beforeEach(() => {
+  initLocalStorage();
+});
+
 describe('toLocalStorage', () => {
   it('should be defined', () => {
     expect(toLocalStorage).toBeDefined();
@@ -142,37 +146,38 @@ describe('clearLocalStorage', () => {
   });
 });
 
-// Mock localStorage
-interface IStorage {
-  [key: string]: string;
+function initLocalStorage() {
+  interface IStorage {
+    [key: string]: string;
+  }
+
+  const localStorageMock = (() => {
+    let store: IStorage = {};
+
+    return {
+      getItem(key: string) {
+        return store[key] || null;
+      },
+      setItem(key: string, value: any) {
+        store[key] = value;
+      },
+      removeItem(key: string) {
+        delete store[key];
+      },
+      clear() {
+        store = {};
+      },
+      get length() {
+        return Object.keys(store).length;
+      },
+      key(i: number) {
+        const keys = Object.keys(store);
+        return keys[i] || null;
+      },
+    };
+  })();
+
+  Object.defineProperty(window, 'localStorage', {
+    value: localStorageMock,
+  });
 }
-
-const localStorageMock = (() => {
-  let store: IStorage = {};
-
-  return {
-    getItem(key: string) {
-      return store[key] || null;
-    },
-    setItem(key: string, value: any) {
-      store[key] = value;
-    },
-    removeItem(key: string) {
-      delete store[key];
-    },
-    clear() {
-      store = {};
-    },
-    get length() {
-      return Object.keys(store).length;
-    },
-    key(i: number) {
-      const keys = Object.keys(store);
-      return keys[i] || null;
-    },
-  };
-})();
-
-Object.defineProperty(window, 'localStorage', {
-  value: localStorageMock,
-});
