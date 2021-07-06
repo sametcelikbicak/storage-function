@@ -16,7 +16,7 @@ export function toSessionStorage(key: string, value: any): void {
  * @returns Stored value
  */
 export function fromSessionStorage(key: string): any {
-  sessionStorage.getItem(key);
+  return sessionStorage.getItem(key);
 }
 
 /**
