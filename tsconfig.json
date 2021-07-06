@@ -6,6 +6,6 @@
       "outDir": "./lib",
       "strict": true
     },
-    "include": ["src"],
+    "include": ["src", "test/storage-setup.ts"],
     "exclude": ["node_modules"]
   }
