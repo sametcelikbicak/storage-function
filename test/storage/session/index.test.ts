@@ -1,9 +1,15 @@
 import {
   clearSessionStorage,
   fromSessionStorage,
+  getAllFromSessionStorage,
+  getKeysFromSessionStorage,
   removeFromSessionStorage,
   toSessionStorage,
 } from '../../../src/storage/session';
+
+beforeEach(() => {
+  clearSessionStorage();
+});
 
 describe('toSessionStorage', () => {
   it('should be defined', () => {
@@ -139,5 +145,55 @@ describe('clearSessionStorage', () => {
     expect(JSON.parse(result1)).toEqual(value1);
     expect(JSON.parse(result3)).toEqual(value3);
     expect(result2).toBeNull();
+  });
+});
+
+describe('getKeysFromSessionStorage', () => {
+  it('should be defined', () => {
+    expect(getKeysFromSessionStorage).toBeDefined();
+  });
+
+  it('should be return all keys from storage', () => {
+    const key1 = 'StorageKey-111';
+    const value1 = 'Storage Value-111';
+    const key2 = 'StorageKey-222';
+    const value2 = 'Storage Value-222';
+    const key3 = 'StorageKey-333';
+    const value3 = 'Storage Value-333';
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    toSessionStorage(key3, value3);
+    const expectedResult = [key1, key2, key3];
+
+    const result = getKeysFromSessionStorage();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe('getAllFromSessionStorage', () => {
+  it('should be defined', () => {
+    expect(getAllFromSessionStorage).toBeDefined();
+  });
+
+  it('should be return all keys and values from storage', () => {
+    const key1 = 'StorageKey-111';
+    const value1 = 'Storage Value-111';
+    const key2 = 'StorageKey-222';
+    const value2 = 'Storage Value-222';
+    const key3 = 'StorageKey-333';
+    const value3 = 'Storage Value-333';
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    toSessionStorage(key3, value3);
+    const expectedResult = [
+      { 'StorageKey-111': JSON.stringify(value1) },
+      { 'StorageKey-222': JSON.stringify(value2) },
+      { 'StorageKey-333': JSON.stringify(value3) },
+    ];
+
+    const result = getAllFromSessionStorage();
+
+    expect(result).toEqual(expectedResult);
   });
 });
