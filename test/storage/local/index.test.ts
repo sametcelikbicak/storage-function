@@ -1,9 +1,15 @@
 import {
   clearLocalStorage,
   fromLocalStorage,
+  getAllFromLocalStorage,
+  getKeysFromLocalStorage,
   removeFromLocalStorage,
   toLocalStorage,
 } from '../../../src/storage/local';
+
+beforeEach(() => {
+  clearLocalStorage();
+});
 
 describe('toLocalStorage', () => {
   it('should be defined', () => {
@@ -139,5 +145,55 @@ describe('clearLocalStorage', () => {
     expect(JSON.parse(result1)).toEqual(value1);
     expect(JSON.parse(result3)).toEqual(value3);
     expect(result2).toBeNull();
+  });
+});
+
+describe('getKeysFromLocalStorage', () => {
+  it('should be defined', () => {
+    expect(getKeysFromLocalStorage).toBeDefined();
+  });
+
+  it('should be return all keys from storage', () => {
+    const key1 = 'StorageKey-111';
+    const value1 = 'Storage Value-111';
+    const key2 = 'StorageKey-222';
+    const value2 = 'Storage Value-222';
+    const key3 = 'StorageKey-333';
+    const value3 = 'Storage Value-333';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toLocalStorage(key3, value3);
+    const expectedResult = [key1, key2, key3];
+
+    const result = getKeysFromLocalStorage();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe('getAllFromLocalStorage', () => {
+  it('should be defined', () => {
+    expect(getAllFromLocalStorage).toBeDefined();
+  });
+
+  it('should be return all keys and values from storage', () => {
+    const key1 = 'StorageKey-111';
+    const value1 = 'Storage Value-111';
+    const key2 = 'StorageKey-222';
+    const value2 = 'Storage Value-222';
+    const key3 = 'StorageKey-333';
+    const value3 = 'Storage Value-333';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toLocalStorage(key3, value3);
+    const expectedResult = [
+      { 'StorageKey-111': JSON.stringify(value1) },
+      { 'StorageKey-222': JSON.stringify(value2) },
+      { 'StorageKey-333': JSON.stringify(value3) },
+    ];
+
+    const result = getAllFromLocalStorage();
+
+    expect(result).toEqual(expectedResult);
   });
 });
