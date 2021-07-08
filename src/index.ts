@@ -7,7 +7,14 @@ import {
   removeFromLocalStorage,
   toLocalStorage,
 } from './storage/local';
-import { clearSessionStorage, fromSessionStorage, removeFromSessionStorage, toSessionStorage } from './storage/session';
+import {
+  clearSessionStorage,
+  fromSessionStorage,
+  getAllFromSessionStorage,
+  getKeysFromSessionStorage,
+  removeFromSessionStorage,
+  toSessionStorage,
+} from './storage/session';
 
 export {
   toLocalStorage,
@@ -18,6 +25,8 @@ export {
   clearLocalStorage,
   toSessionStorage,
   fromSessionStorage,
+  getAllFromSessionStorage,
+  getKeysFromSessionStorage,
   removeFromSessionStorage,
   clearSessionStorage,
   clearStorage,

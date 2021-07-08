@@ -61,6 +61,39 @@ export function clearSessionStorage(except?: string | string[]): void {
   }
 }
 
+/**
+ * Get all keys from Session storage
+ *
+ * @returns Stored keys
+ */
+export function getKeysFromSessionStorage(): string[] {
+  const sessionStorageKeyList: string[] = [];
+
+  for (let i = 0, len = sessionStorage.length; i < len; i++) {
+    sessionStorageKeyList.push(sessionStorage.key(i) ?? '');
+  }
+
+  return sessionStorageKeyList;
+}
+
+/**
+ * Get all keys and values from Session storage
+ *
+ * @returns Stored keys and values
+ */
+export function getAllFromSessionStorage(): Record<string, any>[] {
+  const sessionStorageKeyList: Record<string, any>[] = [];
+
+  for (let i = 0, len = sessionStorage.length; i < len; i++) {
+    const keyValue: Record<string, any> = {
+      [sessionStorage.key(i) ?? '']: sessionStorage.getItem(sessionStorage.key(i) ?? ''),
+    };
+    sessionStorageKeyList.push(keyValue);
+  }
+
+  return sessionStorageKeyList;
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = sessionStorage.length; i < len; i++) {
     const removeableKey = sessionStorage.key(i) ?? '';
