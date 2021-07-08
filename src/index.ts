@@ -2,6 +2,7 @@ import { clearStorage } from './storage';
 import {
   clearLocalStorage,
   fromLocalStorage,
+  getAllFromLocalStorage,
   getKeysFromLocalStorage,
   removeFromLocalStorage,
   toLocalStorage,
@@ -11,6 +12,7 @@ import { clearSessionStorage, fromSessionStorage, removeFromSessionStorage, toSe
 export {
   toLocalStorage,
   fromLocalStorage,
+  getAllFromLocalStorage,
   getKeysFromLocalStorage,
   removeFromLocalStorage,
   clearLocalStorage,

@@ -75,6 +75,25 @@ export function getKeysFromLocalStorage(): string[] {
   return localStorageKeyList;
 }
 
+/**
+ * Get all keys and values from Local storage
+ *
+ * @returns Stored keys and values
+ */
+export function getAllFromLocalStorage(): Record<string, any>[] {
+  const localStorageKeyList: Record<string, any>[] = [];
+
+  for (let i = 0, len = localStorage.length; i < len; i++) {
+    const keyValue: Record<string, any> = {
+      key: localStorage.key(i),
+      value: localStorage.getItem(localStorage.key(i) ?? ''),
+    };
+    localStorageKeyList.push(keyValue);
+  }
+
+  return localStorageKeyList;
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = localStorage.length; i < len; i++) {
     const removeableKey = localStorage.key(i) ?? '';
