@@ -85,8 +85,7 @@ export function getAllFromLocalStorage(): Record<string, any>[] {
 
   for (let i = 0, len = localStorage.length; i < len; i++) {
     const keyValue: Record<string, any> = {
-      key: localStorage.key(i),
-      value: localStorage.getItem(localStorage.key(i) ?? ''),
+      [localStorage.key(i) ?? '']: localStorage.getItem(localStorage.key(i) ?? ''),
     };
     localStorageKeyList.push(keyValue);
   }
