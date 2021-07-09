@@ -106,25 +106,3 @@ function removeFromStorage(except: string) {
 function removeItemFromStorage(storage: Storage, key: string): void {
   storage.removeItem(key);
 }
-
-/* sample for all keys  return type
-{
-  "localStorage": [ "key1", "key2" ],
-  "sessionStorage": [ "key3", "key4" ]
-}
-*/
-
-/* sample for all storage return type
-{
-  "localStorage": [
-    { "key1": "value1" },
-    { "key2": "value2" }
-  ],
-  "sessionStorage": [
-    { "key3": "value3" },
-    { "key4": "value4" }
-  ]
-}
-
-
-*/
