@@ -1,6 +1,10 @@
-import { clearStorage } from '../../src/storage';
+import { clearStorage, getKeys } from '../../src/storage';
 import { fromLocalStorage, toLocalStorage } from '../../src/storage/local';
 import { fromSessionStorage, toSessionStorage } from '../../src/storage/session';
+
+beforeEach(() => {
+  clearStorage();
+});
 
 describe('clearStorage', () => {
   it('should be defined', () => {
@@ -79,3 +83,50 @@ describe('clearStorage', () => {
     expect(result2).toBeNull();
   });
 });
+
+describe('getKeys', () => {
+  it('should be defined', () => {
+    expect(getKeys).toBeDefined();
+  });
+
+  it('should be get all keys from local and session storage', () => {
+    const key1 = 'StorageKey-1';
+    const value1 = 'Storage Value-1';
+    const key2 = 'StorageKey-2';
+    const value2 = 'Storage Value-2';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    const expectedResult = {
+      localStorage: ['StorageKey-1', 'StorageKey-2'],
+      sessionStorage: ['StorageKey-1', 'StorageKey-2'],
+    };
+
+    const result = getKeys();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+/* sample for all keys  return type
+{
+  "localStorage": [ "key1", "key2" ],
+  "sessionStorage": [ "key3", "key4" ]
+}
+*/
+
+/* sample for all storage return type
+{
+  "localStorage": [
+    { "key1": "value1" },
+    { "key2": "value2" }
+  ],
+  "sessionStorage": [
+    { "key3": "value3" },
+    { "key4": "value4" }
+  ]
+}
+
+
+*/
