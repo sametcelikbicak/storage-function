@@ -1,4 +1,4 @@
-import { clearStorage } from './storage';
+import { clearStorage, getAll, getKeys } from './storage';
 import {
   clearLocalStorage,
   fromLocalStorage,
@@ -30,4 +30,6 @@ export {
   removeFromSessionStorage,
   clearSessionStorage,
   clearStorage,
+  getAll,
+  getKeys,
 };
