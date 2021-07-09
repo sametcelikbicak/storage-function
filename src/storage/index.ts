@@ -61,6 +61,32 @@ export function getKeys(): Record<string, string[]> {
   return { localStorage: localStorageKeyList, sessionStorage: sessionStorageKeyList };
 }
 
+/**
+ * Get all keys and values from Local and Session storage
+ *
+ * @returns Stored keys and values from Local and Session storage
+ */
+export function getAll(): Record<string, Record<string, any>[]> {
+  const localStorageKeyList: Record<string, any>[] = [];
+  const sessionStorageKeyList: Record<string, any>[] = [];
+
+  for (let i = 0, len = localStorage.length; i < len; i++) {
+    const keyValue: Record<string, any> = {
+      [localStorage.key(i) ?? '']: localStorage.getItem(localStorage.key(i) ?? ''),
+    };
+    localStorageKeyList.push(keyValue);
+  }
+
+  for (let i = 0, len = sessionStorage.length; i < len; i++) {
+    const keyValue: Record<string, any> = {
+      [sessionStorage.key(i) ?? '']: sessionStorage.getItem(sessionStorage.key(i) ?? ''),
+    };
+    sessionStorageKeyList.push(keyValue);
+  }
+
+  return { localStorage: localStorageKeyList, sessionStorage: sessionStorageKeyList };
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = localStorage.length; i < len; i++) {
     const removeableKey = localStorage.key(i) ?? '';
@@ -80,3 +106,25 @@ function removeFromStorage(except: string) {
 function removeItemFromStorage(storage: Storage, key: string): void {
   storage.removeItem(key);
 }
+
+/* sample for all keys  return type
+{
+  "localStorage": [ "key1", "key2" ],
+  "sessionStorage": [ "key3", "key4" ]
+}
+*/
+
+/* sample for all storage return type
+{
+  "localStorage": [
+    { "key1": "value1" },
+    { "key2": "value2" }
+  ],
+  "sessionStorage": [
+    { "key3": "value3" },
+    { "key4": "value4" }
+  ]
+}
+
+
+*/
