@@ -1,4 +1,4 @@
-import { clearStorage, getKeys } from '../../src/storage';
+import { clearStorage, getAll, getKeys } from '../../src/storage';
 import { fromLocalStorage, toLocalStorage } from '../../src/storage/local';
 import { fromSessionStorage, toSessionStorage } from '../../src/storage/session';
 
@@ -109,24 +109,27 @@ describe('getKeys', () => {
   });
 });
 
-/* sample for all keys  return type
-{
-  "localStorage": [ "key1", "key2" ],
-  "sessionStorage": [ "key3", "key4" ]
-}
-*/
+describe('getAll', () => {
+  it('should be defined', () => {
+    expect(getAll).toBeDefined();
+  });
 
-/* sample for all storage return type
-{
-  "localStorage": [
-    { "key1": "value1" },
-    { "key2": "value2" }
-  ],
-  "sessionStorage": [
-    { "key3": "value3" },
-    { "key4": "value4" }
-  ]
-}
+  it('should be get all keys and values from local and session storage', () => {
+    const key1 = 'StorageKey-1';
+    const value1 = 'Storage Value-1';
+    const key2 = 'StorageKey-2';
+    const value2 = 'Storage Value-2';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    const expectedResult = {
+      localStorage: [{ 'StorageKey-1': JSON.stringify(value1) }, { 'StorageKey-2': JSON.stringify(value2) }],
+      sessionStorage: [{ 'StorageKey-1': JSON.stringify(value1) }, { 'StorageKey-2': JSON.stringify(value2) }],
+    };
 
+    const result = getAll();
 
-*/
+    expect(result).toEqual(expectedResult);
+  });
+});
