@@ -59,6 +59,22 @@ const exceptedKeys = ['some_key', 'another_key'];
 clearLocalStorage(exceptedKeys); // Remove all local storage keys except exceptedKeys
 ```
 
+- getKeysFromLocalStorage usage
+
+```typescript
+import { getKeysFromLocalStorage } from 'storage-function';
+
+console.log(getKeysFromLocalStorage());
+```
+
+- getAllFromLocalStorage usage
+
+```typescript
+import { getAllFromLocalStorage } from 'storage-function';
+
+console.log(getAllFromLocalStorage());
+```
+
 ---
 
 #### Session storage key and value definitions
@@ -110,6 +126,22 @@ const exceptedKeys = ['key_one', 'keyTwo'];
 clearSessionStorage(exceptedKeys); // Remove all session storage keys except exceptedKeys
 ```
 
+- getKeysFromSessionStorage usage
+
+```typescript
+import { getKeysFromSessionStorage } from 'storage-function';
+
+console.log(getKeysFromSessionStorage());
+```
+
+- getAllFromSessionStorage usage
+
+```typescript
+import { getAllFromSessionStorage } from 'storage-function';
+
+console.log(getAllFromSessionStorage());
+```
+
 ---
 
 #### Storage definition
@@ -123,4 +155,20 @@ clearStorage(); // Remove all storage keys
 
 const exceptedKeys = ['id_token', 'access_token'];
 clearStorage(exceptedKeys); // Remove all storage keys except exceptedKeys
+```
+
+- getKeys usage
+
+```typescript
+import { getKeys } from 'storage-function';
+
+console.log(getKeys());
+```
+
+- getAll usage
+
+```typescript
+import { getAll } from 'storage-function';
+
+console.log(getAll());
 ```
