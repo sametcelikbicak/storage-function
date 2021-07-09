@@ -60,6 +60,39 @@ export function clearLocalStorage(except?: string | string[]): void {
   }
 }
 
+/**
+ * Get all keys from Local storage
+ *
+ * @returns Stored keys
+ */
+export function getKeysFromLocalStorage(): string[] {
+  const localStorageKeyList: string[] = [];
+
+  for (let i = 0, len = localStorage.length; i < len; i++) {
+    localStorageKeyList.push(localStorage.key(i) ?? '');
+  }
+
+  return localStorageKeyList;
+}
+
+/**
+ * Get all keys and values from Local storage
+ *
+ * @returns Stored keys and values
+ */
+export function getAllFromLocalStorage(): Record<string, any>[] {
+  const localStorageKeyList: Record<string, any>[] = [];
+
+  for (let i = 0, len = localStorage.length; i < len; i++) {
+    const keyValue: Record<string, any> = {
+      [localStorage.key(i) ?? '']: localStorage.getItem(localStorage.key(i) ?? ''),
+    };
+    localStorageKeyList.push(keyValue);
+  }
+
+  return localStorageKeyList;
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = localStorage.length; i < len; i++) {
     const removeableKey = localStorage.key(i) ?? '';

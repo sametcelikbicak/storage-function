@@ -1,6 +1,10 @@
-import { clearStorage } from '../../src/storage';
+import { clearStorage, getAll, getKeys } from '../../src/storage';
 import { fromLocalStorage, toLocalStorage } from '../../src/storage/local';
 import { fromSessionStorage, toSessionStorage } from '../../src/storage/session';
+
+beforeEach(() => {
+  clearStorage();
+});
 
 describe('clearStorage', () => {
   it('should be defined', () => {
@@ -77,5 +81,55 @@ describe('clearStorage', () => {
     expect(JSON.parse(commonResult22)).toEqual(commonValue2);
     expect(result1).toBeNull();
     expect(result2).toBeNull();
+  });
+});
+
+describe('getKeys', () => {
+  it('should be defined', () => {
+    expect(getKeys).toBeDefined();
+  });
+
+  it('should be get all keys from local and session storage', () => {
+    const key1 = 'StorageKey-1';
+    const value1 = 'Storage Value-1';
+    const key2 = 'StorageKey-2';
+    const value2 = 'Storage Value-2';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    const expectedResult = {
+      localStorage: ['StorageKey-1', 'StorageKey-2'],
+      sessionStorage: ['StorageKey-1', 'StorageKey-2'],
+    };
+
+    const result = getKeys();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe('getAll', () => {
+  it('should be defined', () => {
+    expect(getAll).toBeDefined();
+  });
+
+  it('should be get all keys and values from local and session storage', () => {
+    const key1 = 'StorageKey-1';
+    const value1 = 'Storage Value-1';
+    const key2 = 'StorageKey-2';
+    const value2 = 'Storage Value-2';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    const expectedResult = {
+      localStorage: [{ 'StorageKey-1': JSON.stringify(value1) }, { 'StorageKey-2': JSON.stringify(value2) }],
+      sessionStorage: [{ 'StorageKey-1': JSON.stringify(value1) }, { 'StorageKey-2': JSON.stringify(value2) }],
+    };
+
+    const result = getAll();
+
+    expect(result).toEqual(expectedResult);
   });
 });
