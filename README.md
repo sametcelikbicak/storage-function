@@ -65,6 +65,11 @@ clearLocalStorage(exceptedKeys); // Remove all local storage keys except excepte
 import { getKeysFromLocalStorage } from 'storage-function';
 
 console.log(getKeysFromLocalStorage());
+
+Result:
+(2) ["localKey2", "localKey1"]
+0: "localKey2"
+1: "localKey1"
 ```
 
 - getAllFromLocalStorage usage
@@ -73,6 +78,11 @@ console.log(getKeysFromLocalStorage());
 import { getAllFromLocalStorage } from 'storage-function';
 
 console.log(getAllFromLocalStorage());
+
+Result:
+(2) [{…}, {…}]
+0: {localKey2: "\"Local storage value 2\""}
+1: {localKey1: "\"Local storage value 1\""}
 ```
 
 ---
@@ -132,6 +142,11 @@ clearSessionStorage(exceptedKeys); // Remove all session storage keys except exc
 import { getKeysFromSessionStorage } from 'storage-function';
 
 console.log(getKeysFromSessionStorage());
+
+Result:
+(2) ["sessionKey2", "sessionKey1"]
+0: "sessionKey2"
+1: "sessionKey1"
 ```
 
 - getAllFromSessionStorage usage
@@ -140,6 +155,11 @@ console.log(getKeysFromSessionStorage());
 import { getAllFromSessionStorage } from 'storage-function';
 
 console.log(getAllFromSessionStorage());
+
+Result:
+(2) [{…}, {…}]
+0: {sessionKey2: "\"Session storage value 2\""}
+1: {sessionKey1: "\"Session storage value 1\""}
 ```
 
 ---
@@ -163,6 +183,11 @@ clearStorage(exceptedKeys); // Remove all storage keys except exceptedKeys
 import { getKeys } from 'storage-function';
 
 console.log(getKeys());
+
+Result:
+{localStorage: Array(2), sessionStorage: Array(2)}
+localStorage: (2) ["localKey2", "localKey1"]
+sessionStorage: (2) ["sessionKey2", "sessionKey1"]
 ```
 
 - getAll usage
@@ -171,4 +196,13 @@ console.log(getKeys());
 import { getAll } from 'storage-function';
 
 console.log(getAll());
+
+Result:
+{localStorage: Array(2), sessionStorage: Array(2)}
+localStorage: Array(2)
+0: {localKey2: "\"Local storage value 2\""}
+1: {localKey1: "\"Local storage value 1\""}
+sessionStorage: Array(2)
+0: {sessionKey2: "\"Session storage value 2\""}
+1: {sessionKey1: "\"Session storage value 1\""}
 ```
