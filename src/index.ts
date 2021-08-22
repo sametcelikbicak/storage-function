@@ -16,7 +16,7 @@ import {
   toSessionStorage,
 } from './storage/session';
 
-export {
+export const storageFunction = Object.freeze({
   toLocalStorage,
   fromLocalStorage,
   getAllFromLocalStorage,
@@ -32,4 +32,4 @@ export {
   clearStorage,
   getAll,
   getKeys,
-};
+});
