@@ -94,6 +94,15 @@ export function getAllFromSessionStorage(): Record<string, any>[] {
   return sessionStorageKeyList;
 }
 
+/**
+ * Get count of stored keys from Session storage
+ *
+ * @returns Stored keys count
+ */
+export function getKeysCountFromSessionStorage(): number {
+  return sessionStorage.length;
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = sessionStorage.length; i < len; i++) {
     const removeableKey = sessionStorage.key(i) ?? '';
