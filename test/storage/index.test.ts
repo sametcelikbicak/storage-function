@@ -1,4 +1,4 @@
-import { clearStorage, getAll, getKeys } from '../../src/storage';
+import { clearStorage, getAll, getKeys, getKeysCount } from '../../src/storage';
 import { fromLocalStorage, toLocalStorage } from '../../src/storage/local';
 import { fromSessionStorage, toSessionStorage } from '../../src/storage/session';
 
@@ -129,6 +129,42 @@ describe('getAll', () => {
     };
 
     const result = getAll();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe('getKeysCount', () => {
+  it('should be defined', () => {
+    expect(getKeysCount).toBeDefined();
+  });
+
+  it('should be return all keys count from local and session storage', () => {
+    const key1 = 'StorageKey-1';
+    const value1 = 'Storage Value-1';
+    const key2 = 'StorageKey-2';
+    const value2 = 'Storage Value-2';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    const expectedResult = {
+      localStorage: 2,
+      sessionStorage: 2,
+    };
+
+    const result = getKeysCount();
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should be return 0 with empty storage', () => {
+    const expectedResult = {
+      localStorage: 0,
+      sessionStorage: 0,
+    };
+
+    const result = getKeysCount();
 
     expect(result).toEqual(expectedResult);
   });
