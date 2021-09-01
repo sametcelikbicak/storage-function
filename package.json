@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/sametcelikbicak/storage-function#readme",
   "devDependencies": {
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^27.0.1",
     "jest": "^27.0.6",
     "prettier": "^2.3.1",
     "ts-jest": "^27.0.3",
