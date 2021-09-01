@@ -2,6 +2,7 @@ import {
   clearLocalStorage,
   fromLocalStorage,
   getAllFromLocalStorage,
+  getKeysCountFromLocalStorage,
   getKeysFromLocalStorage,
   removeFromLocalStorage,
   toLocalStorage,
@@ -193,6 +194,37 @@ describe('getAllFromLocalStorage', () => {
     ];
 
     const result = getAllFromLocalStorage();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe('getKeysCountFromLocalStorage', () => {
+  it('should be defined', () => {
+    expect(getKeysCountFromLocalStorage).toBeDefined();
+  });
+
+  it('should be return all keys count from storage', () => {
+    const key1 = 'StorageKey-111';
+    const value1 = 'Storage Value-111';
+    const key2 = 'StorageKey-222';
+    const value2 = 'Storage Value-222';
+    const key3 = 'StorageKey-333';
+    const value3 = 'Storage Value-333';
+    toLocalStorage(key1, value1);
+    toLocalStorage(key2, value2);
+    toLocalStorage(key3, value3);
+    const expectedResult = 3;
+
+    const result = getKeysCountFromLocalStorage();
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should be return 0 with empty storage', () => {
+    const expectedResult = 0;
+
+    const result = getKeysCountFromLocalStorage();
 
     expect(result).toEqual(expectedResult);
   });
