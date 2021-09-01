@@ -2,6 +2,7 @@ import {
   clearSessionStorage,
   fromSessionStorage,
   getAllFromSessionStorage,
+  getKeysCountFromSessionStorage,
   getKeysFromSessionStorage,
   removeFromSessionStorage,
   toSessionStorage,
@@ -193,6 +194,37 @@ describe('getAllFromSessionStorage', () => {
     ];
 
     const result = getAllFromSessionStorage();
+
+    expect(result).toEqual(expectedResult);
+  });
+});
+
+describe('getKeysCountFromSessionStorage', () => {
+  it('should be defined', () => {
+    expect(getKeysCountFromSessionStorage).toBeDefined();
+  });
+
+  it('should be return all keys count from storage', () => {
+    const key1 = 'StorageKey-111';
+    const value1 = 'Storage Value-111';
+    const key2 = 'StorageKey-222';
+    const value2 = 'Storage Value-222';
+    const key3 = 'StorageKey-333';
+    const value3 = 'Storage Value-333';
+    toSessionStorage(key1, value1);
+    toSessionStorage(key2, value2);
+    toSessionStorage(key3, value3);
+    const expectedResult = 3;
+
+    const result = getKeysCountFromSessionStorage();
+
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('should be return 0 with empty storage', () => {
+    const expectedResult = 0;
+
+    const result = getKeysCountFromSessionStorage();
 
     expect(result).toEqual(expectedResult);
   });
