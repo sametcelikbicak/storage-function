@@ -97,6 +97,19 @@ Result:
 1: {localKey1: "\"Local storage value 1\""}
 ```
 
+- getKeysCountFromLocalStorage usage
+
+```typescript
+import { storageFunction } from 'storage-function';
+
+storageFunction.toLocalStorage(localStorageKey, localStorageValue);
+
+console.log(storageFunction.getKeysCountFromLocalStorage());
+
+Result:
+1
+```
+
 ---
 
 #### Session storage key and value definitions
@@ -177,6 +190,19 @@ Result:
 1: {sessionKey1: "\"Session storage value 1\""}
 ```
 
+- getKeysCountFromSessionStorage usage
+
+```typescript
+import { storageFunction } from 'storage-function';
+
+storageFunction.toSessionStorage(sessionStorageKey, sessionStorageValue);
+
+console.log(storageFunction.getKeysCountFromSessionStorage());
+
+Result:
+1
+```
+
 ---
 
 #### Storage definition
@@ -220,4 +246,18 @@ localStorage: Array(2)
 sessionStorage: Array(2)
 0: {sessionKey2: "\"Session storage value 2\""}
 1: {sessionKey1: "\"Session storage value 1\""}
+```
+
+- getKeysCount usage
+
+```typescript
+import { storageFunction } from 'storage-function';
+
+storageFunction.toLocalStorage(localStorageKey, localStorageValue);
+storageFunction.toSessionStorage(sessionStorageKey, sessionStorageValue);
+
+console.log(storageFunction.getKeysCount());
+
+Result:
+{localStorage: 1, sessionStorage: 1}
 ```
