@@ -93,6 +93,15 @@ export function getAllFromLocalStorage(): Record<string, any>[] {
   return localStorageKeyList;
 }
 
+/**
+ * Get count of stored keys from Local storage
+ *
+ * @returns Stored keys count
+ */
+export function getKeysCountFromLocalStorage(): number {
+  return localStorage.length;
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = localStorage.length; i < len; i++) {
     const removeableKey = localStorage.key(i) ?? '';
