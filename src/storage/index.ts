@@ -87,6 +87,15 @@ export function getAll(): Record<string, Record<string, any>[]> {
   return { localStorage: localStorageKeyList, sessionStorage: sessionStorageKeyList };
 }
 
+/**
+ * Get count of stored keys from Local and Session storage
+ *
+ * @returns Stored keys count from Local and Session storage
+ */
+export function getKeysCount(): Record<string, number> {
+  return { localStorage: localStorage.length, sessionStorage: sessionStorage.length };
+}
+
 function removeFromStorage(except: string) {
   for (let i = 0, len = localStorage.length; i < len; i++) {
     const removeableKey = localStorage.key(i) ?? '';
