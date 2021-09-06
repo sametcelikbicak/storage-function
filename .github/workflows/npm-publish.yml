@@ -1,0 +1,25 @@
+name: NPM Publish
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    name: Build 🏗 & Publish 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v2.4.0
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+      - name: Check Git Tag to continue publish
+        run: ./scripts/checkTag.sh
+          
+      - run: npm install
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
