@@ -3,6 +3,9 @@
 ## 2.1.2
 - Add CHANGELOG file
 - Update `npm-publish.yml`
+- Update README with link functionality
+- Update `codeql-analysis.yml`
+
 ## 2.1.1
 - Add npm publish GitHub Action and scripts
 ## 2.1.0
