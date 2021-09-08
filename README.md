@@ -28,6 +28,15 @@ npm i storage-function
   - ##### [getAllFromLocalStorage](#getAllFromLocalStorage)
   - ##### [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
 
+- ##### Session Storage functions
+  - ##### [toSessionStorage](#toSessionStorage)
+  - ##### [fromSessionStorage](#fromSessionStorage)
+  - ##### [removeFromSessionStorage](#removeFromSessionStorage)
+  - ##### [clearSessionStorage](#clearSessionStorage)
+  - ##### [getKeysFromSessionStorage](#getKeysFromSessionStorage)
+  - ##### [getAllFromSessionStorage](#getAllFromSessionStorage)
+  - ##### [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
+
 #### Local storage key and value definitions
 
 ```typescript
@@ -135,7 +144,7 @@ const sessionStorageValue = {
 };
 ```
 
-- toSessionStorage usage
+##### - <span id="toSessionStorage">toSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -143,7 +152,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.toSessionStorage(sessionStorageKey, sessionStorageValue);
 ```
 
-- fromSessionStorage usage
+##### - <span id="fromSessionStorage">fromSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -154,7 +163,7 @@ Result:
 {"name":"object value","stringValue":"string value","booleanValue":true,"numberValue":1234567890,"dateValue":"2021-08-22T15:58:28.646Z"}
 ```
 
-- removeFromSessionStorage usage
+##### - <span id="removeFromSessionStorage">removeFromSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -162,7 +171,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.removeFromSessionStorage(sessionStorageKey);
 ```
 
-- clearSessionStorage usage
+##### - <span id="clearSessionStorage">clearSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -173,7 +182,7 @@ const exceptedKeys = ['key_one', 'keyTwo'];
 storageFunction.clearSessionStorage(exceptedKeys); // Remove all session storage keys except exceptedKeys
 ```
 
-- getKeysFromSessionStorage usage
+##### - <span id="getKeysFromSessionStorage">getKeysFromSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -186,7 +195,7 @@ Result:
 1: "sessionKey1"
 ```
 
-- getAllFromSessionStorage usage
+##### - <span id="getAllFromSessionStorage">getAllFromSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -199,7 +208,7 @@ Result:
 1: {sessionKey1: "\"Session storage value 1\""}
 ```
 
-- getKeysCountFromSessionStorage usage
+##### - <span id="getKeysCountFromSessionStorage">getKeysCountFromSessionStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
