@@ -17,7 +17,7 @@ With **2.0.0** version its enough to just import **storageFunction** then you ca
 npm i storage-function
 ```
 
-## Usage
+## Functions list
 
 - ##### Local Storage functions
   - ##### [toLocalStorage](#toLocalStorage)
@@ -36,6 +36,15 @@ npm i storage-function
   - ##### [getKeysFromSessionStorage](#getKeysFromSessionStorage)
   - ##### [getAllFromSessionStorage](#getAllFromSessionStorage)
   - ##### [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
+
+- ##### Storage functions
+  - ##### [clearStorage](#clearStorage)
+  - ##### [getKeys](#getKeys)
+  - ##### [getAll](#getAll)
+  - ##### [getKeysCount](#getKeysCount)
+
+
+## Usage
 
 #### Local storage key and value definitions
 
@@ -225,7 +234,7 @@ Result:
 
 #### Storage definition
 
-- clearStorage usage
+##### - <span id="clearStorage">clearStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -236,7 +245,7 @@ const exceptedKeys = ['id_token', 'access_token'];
 storageFunction.clearStorage(exceptedKeys); // Remove all storage keys except exceptedKeys
 ```
 
-- getKeys usage
+##### - <span id="getKeys">getKeys usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -249,7 +258,7 @@ localStorage: (2) ["localKey2", "localKey1"]
 sessionStorage: (2) ["sessionKey2", "sessionKey1"]
 ```
 
-- getAll usage
+##### - <span id="getAll">getAll usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -266,7 +275,7 @@ sessionStorage: Array(2)
 1: {sessionKey1: "\"Session storage value 1\""}
 ```
 
-- getKeysCount usage
+##### - <span id="getKeysCount">getKeysCount usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
