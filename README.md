@@ -19,6 +19,15 @@ npm i storage-function
 
 ## Usage
 
+- ##### Local Storage functions
+  - ##### [toLocalStorage](#toLocalStorage-usage)
+  - ##### [fromLocalStorage](#fromLocalStorage-usage)
+  - ##### [removeFromLocalStorage](#removeFromLocalStorage-usage)
+  - ##### [clearLocalStorage](#clearLocalStorage-usage)
+  - ##### [getKeysFromLocalStorage](#getKeysFromLocalStorage-usage)
+  - ##### [getAllFromLocalStorage](#getAllFromLocalStorage-usage)
+  - ##### [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage-usage)
+
 #### Local storage key and value definitions
 
 ```typescript
@@ -52,7 +61,7 @@ Result:
 {"name":"object value","stringValue":"string value","booleanValue":true,"numberValue":1234567890,"dateValue":"2021-08-22T15:57:05.147Z"}
 ```
 
-- fromLocalStorage usage
+- removeFromLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
