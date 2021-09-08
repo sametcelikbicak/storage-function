@@ -20,13 +20,13 @@ npm i storage-function
 ## Usage
 
 - ##### Local Storage functions
-  - ##### [toLocalStorage](#toLocalStorage-usage)
-  - ##### [fromLocalStorage](#fromLocalStorage-usage)
-  - ##### [removeFromLocalStorage](#removeFromLocalStorage-usage)
-  - ##### [clearLocalStorage](#clearLocalStorage-usage)
-  - ##### [getKeysFromLocalStorage](#getKeysFromLocalStorage-usage)
-  - ##### [getAllFromLocalStorage](#getAllFromLocalStorage-usage)
-  - ##### [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage-usage)
+  - ##### [toLocalStorage](#toLocalStorage)
+  - ##### [fromLocalStorage](#fromLocalStorage)
+  - ##### [removeFromLocalStorage](#removeFromLocalStorage)
+  - ##### [clearLocalStorage](#clearLocalStorage)
+  - ##### [getKeysFromLocalStorage](#getKeysFromLocalStorage)
+  - ##### [getAllFromLocalStorage](#getAllFromLocalStorage)
+  - ##### [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
 
 #### Local storage key and value definitions
 
@@ -42,7 +42,7 @@ const localStorageValue = {
 };
 ```
 
-- toLocalStorage usage
+- <span id="toLocalStorage">toLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -50,7 +50,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.toLocalStorage(localStorageKey, localStorageValue);
 ```
 
-- fromLocalStorage usage
+- <span id="fromLocalStorage">fromLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -61,7 +61,7 @@ Result:
 {"name":"object value","stringValue":"string value","booleanValue":true,"numberValue":1234567890,"dateValue":"2021-08-22T15:57:05.147Z"}
 ```
 
-- removeFromLocalStorage usage
+- <span id="removeFromLocalStorage">removeFromLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -69,7 +69,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.removeFromLocalStorage(localStorageKey);
 ```
 
-- clearLocalStorage usage
+- <span id="clearLocalStorage">clearLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -80,7 +80,7 @@ const exceptedKeys = ['some_key', 'another_key'];
 storageFunction.clearLocalStorage(exceptedKeys); // Remove all local storage keys except exceptedKeys
 ```
 
-- getKeysFromLocalStorage usage
+- <span id="getKeysFromLocalStorage">getKeysFromLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -93,7 +93,7 @@ Result:
 1: "localKey1"
 ```
 
-- getAllFromLocalStorage usage
+- <span id="getAllFromLocalStorage">getAllFromLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -106,7 +106,7 @@ Result:
 1: {localKey1: "\"Local storage value 1\""}
 ```
 
-- getKeysCountFromLocalStorage usage
+- <span id="getKeysCountFromLocalStorage">getKeysCountFromLocalStorage usage</span>
 
 ```typescript
 import { storageFunction } from 'storage-function';
