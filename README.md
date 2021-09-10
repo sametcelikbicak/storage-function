@@ -17,16 +17,17 @@ With **2.0.0** version its enough to just import **storageFunction** then you ca
 npm i storage-function
 ```
 
-## Functions list
+## Table of contents
 
+<!-- toc -->
 - ##### Local Storage functions
-  - ##### [toLocalStorage](#toLocalStorage)
-  - ##### [fromLocalStorage](#fromLocalStorage)
-  - ##### [removeFromLocalStorage](#removeFromLocalStorage)
-  - ##### [clearLocalStorage](#clearLocalStorage)
-  - ##### [getKeysFromLocalStorage](#getKeysFromLocalStorage)
-  - ##### [getAllFromLocalStorage](#getAllFromLocalStorage)
-  - ##### [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
+  * [toLocalStorage](#toLocalStorage)
+  * [fromLocalStorage](#fromLocalStorage)
+  * [removeFromLocalStorage](#removeFromLocalStorage)
+  * [clearLocalStorage](#clearLocalStorage)
+  * [getKeysFromLocalStorage](#getKeysFromLocalStorage)
+  * [getAllFromLocalStorage](#getAllFromLocalStorage)
+  * [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
 
 - ##### Session Storage functions
   - ##### [toSessionStorage](#toSessionStorage)
@@ -39,10 +40,11 @@ npm i storage-function
 
 - ##### Storage functions
   - ##### [clearStorage](#clearStorage)
-  - ##### [getKeys](#getKeys)
+  * [getKeys](#getKeys)
   - ##### [getAll](#getAll)
   - ##### [getKeysCount](#getKeysCount)
 
+<!-- tocstop -->
 
 ## Usage
 
