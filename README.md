@@ -30,20 +30,19 @@ npm i storage-function
   * [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
 
 - ##### Session Storage functions
-  - ##### [toSessionStorage](#toSessionStorage)
-  - ##### [fromSessionStorage](#fromSessionStorage)
-  - ##### [removeFromSessionStorage](#removeFromSessionStorage)
-  - ##### [clearSessionStorage](#clearSessionStorage)
-  - ##### [getKeysFromSessionStorage](#getKeysFromSessionStorage)
-  - ##### [getAllFromSessionStorage](#getAllFromSessionStorage)
-  - ##### [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
+  * [toSessionStorage](#toSessionStorage)
+  * [fromSessionStorage](#fromSessionStorage)
+  * [removeFromSessionStorage](#removeFromSessionStorage)
+  * [clearSessionStorage](#clearSessionStorage)
+  * [getKeysFromSessionStorage](#getKeysFromSessionStorage)
+  * [getAllFromSessionStorage](#getAllFromSessionStorage)
+  * [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
 
 - ##### Storage functions
-  - ##### [clearStorage](#clearStorage)
+  * [clearStorage](#clearStorage)
   * [getKeys](#getKeys)
-  - ##### [getAll](#getAll)
-  - ##### [getKeysCount](#getKeysCount)
-
+  * [getAll](#getAll)
+  * [getKeysCount](#getKeysCount)
 <!-- tocstop -->
 
 ## Usage
