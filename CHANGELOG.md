@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## 2.1.3
+- Update README with Table of Contents
 ## 2.1.2
 - Add CHANGELOG file
 - Update `npm-publish.yml`
@@ -25,9 +27,10 @@ import { toLocalStorage, toSessionStorage } from 'storage-function';
 ```typescript
  import * as storageFunction from 'storage-function';
 ```
-With **2.0.0** version its enough to just import **storageFunction** then you can reach all helpful function under it
-
-
+With **2.0.0** version its enough to just import **storageFunction** then you can reach all helpful function under it like below.
+```typescript
+import { storageFunction } from 'storage-function';
+```
 ## 1.1.4
 -
 ## 1.1.3

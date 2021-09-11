@@ -1,6 +1,48 @@
-# Storage Function [![npm version](https://badge.fury.io/js/storage-function.svg)](https://badge.fury.io/js/storage-function) ![npm](https://img.shields.io/npm/dt/storage-function?label=Downloads&logo=npm) [![NPM Publish](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml) [![CodeQL Analyze](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml)
+# Storage Function 
+[![npm version](https://badge.fury.io/js/storage-function.svg)](https://badge.fury.io/js/storage-function) ![npm](https://img.shields.io/npm/dt/storage-function?label=Downloads&logo=npm) [![NPM Publish](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml) [![CodeQL Analyze](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml)
 
-A function to manipulate browser storages. Before **2.0.0** version each function should be import itself like below
+A function to manipulate browser storages. Such as store a key value pair to  session or local storage,  getting  key value pairs from local or session storage.You can check all available functions for more details.
+
+
+## Table of contents
+
+<!-- toc -->
+- ##### [Installation](#installation)
+- ##### [Breaking Change](#breakingChange)
+- ##### [Usage](#usage)
+- ##### Local Storage functions
+  * [toLocalStorage](#toLocalStorage)
+  * [fromLocalStorage](#fromLocalStorage)
+  * [removeFromLocalStorage](#removeFromLocalStorage)
+  * [clearLocalStorage](#clearLocalStorage)
+  * [getKeysFromLocalStorage](#getKeysFromLocalStorage)
+  * [getAllFromLocalStorage](#getAllFromLocalStorage)
+  * [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
+
+- ##### Session Storage functions
+  * [toSessionStorage](#toSessionStorage)
+  * [fromSessionStorage](#fromSessionStorage)
+  * [removeFromSessionStorage](#removeFromSessionStorage)
+  * [clearSessionStorage](#clearSessionStorage)
+  * [getKeysFromSessionStorage](#getKeysFromSessionStorage)
+  * [getAllFromSessionStorage](#getAllFromSessionStorage)
+  * [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
+
+- ##### Storage functions
+  * [clearStorage](#clearStorage)
+  * [getKeys](#getKeys)
+  * [getAll](#getAll)
+  * [getKeysCount](#getKeysCount)
+<!-- tocstop -->
+
+## <span id="installation">Installation</span>
+
+```shell
+npm i storage-function
+```
+
+## <span id="breakingChange">Breaking Change</span>
+Before **2.0.0** version each function should be import itself like below
 ```typescript
 import { toLocalStorage, toSessionStorage } from 'storage-function';
 ```
@@ -9,45 +51,15 @@ import { toLocalStorage, toSessionStorage } from 'storage-function';
 ```typescript
  import * as storageFunction from 'storage-function';
 ```
-With **2.0.0** version its enough to just import **storageFunction** then you can reach all helpful function under it
-
-## Installation
-
-```
-npm i storage-function
+With **2.0.0** version its enough to just import **storageFunction** then you can reach all helpful function under it like below.
+```typescript
+import { storageFunction } from 'storage-function';
 ```
 
-## Functions list
-
-- ##### Local Storage functions
-  - ##### [toLocalStorage](#toLocalStorage)
-  - ##### [fromLocalStorage](#fromLocalStorage)
-  - ##### [removeFromLocalStorage](#removeFromLocalStorage)
-  - ##### [clearLocalStorage](#clearLocalStorage)
-  - ##### [getKeysFromLocalStorage](#getKeysFromLocalStorage)
-  - ##### [getAllFromLocalStorage](#getAllFromLocalStorage)
-  - ##### [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
-
-- ##### Session Storage functions
-  - ##### [toSessionStorage](#toSessionStorage)
-  - ##### [fromSessionStorage](#fromSessionStorage)
-  - ##### [removeFromSessionStorage](#removeFromSessionStorage)
-  - ##### [clearSessionStorage](#clearSessionStorage)
-  - ##### [getKeysFromSessionStorage](#getKeysFromSessionStorage)
-  - ##### [getAllFromSessionStorage](#getAllFromSessionStorage)
-  - ##### [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
-
-- ##### Storage functions
-  - ##### [clearStorage](#clearStorage)
-  - ##### [getKeys](#getKeys)
-  - ##### [getAll](#getAll)
-  - ##### [getKeysCount](#getKeysCount)
-
-
-## Usage
+## <span id="usage">Usage</span>
 
 #### Local storage key and value definitions
-
+Sample key and value definition for testing local storage functions.
 ```typescript
 const localStorageKey = 'local_storage_key';
 
@@ -140,7 +152,7 @@ Result:
 ---
 
 #### Session storage key and value definitions
-
+Sample key and value definition for testing session storage functions.
 ```typescript
 const sessionStorageKey = 'session_storage_key';
 
@@ -232,7 +244,8 @@ Result:
 
 ---
 
-#### Storage definition
+#### Storage functions definition
+They work with local and session storage.
 
 ##### - <span id="clearStorage">clearStorage usage</span>
 
