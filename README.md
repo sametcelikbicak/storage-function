@@ -37,7 +37,7 @@ A function to manipulate browser storages. Such as store a key value pair to  se
 
 ## <span id="installation">Installation</span>
 
-```
+```shell
 npm i storage-function
 ```
 
