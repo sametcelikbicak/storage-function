@@ -1,0 +1,27 @@
+name: Build & Test
+
+on: [ push ]
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+
+    - name: Initialize Node
+      uses: actions/setup-node@v2.4.0
+      with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+
+
+    - name: Install deps
+      run: npm ci
+
+    - name: Build application
+      run: npm run build
+
+    - name: Run tests
+      run: npm run test
