@@ -1,5 +1,9 @@
 # storage-function package changes
 
+## 2.1.4
+- Add GitHub action for test
+- Update README
+- Update CHANGELOG
 ## 2.1.3
 - Update README with Table of Contents
 ## 2.1.2
@@ -7,7 +11,6 @@
 - Update `npm-publish.yml`
 - Update README with link functionality
 - Update `codeql-analysis.yml`
-
 ## 2.1.1
 - Add npm publish GitHub Action and scripts
 ## 2.1.0
