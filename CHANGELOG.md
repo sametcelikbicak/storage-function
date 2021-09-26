@@ -4,6 +4,7 @@
 - Add GitHub action for test
 - Update README
 - Update CHANGELOG
+- Fix dependabot issues
 ## 2.1.3
 - Update README with Table of Contents
 ## 2.1.2
