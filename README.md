@@ -1,6 +1,6 @@
 <div align="center">
 
- <img src="assets/storage-function.svg" alt="Logo">
+ <img src="assets/storage-function.svg" alt="Logo" width="256" height="256">
 
 # Storage Function 
 ![npm](https://img.shields.io/npm/v/storage-function?color=g&label=storage-function&logo=npm) ![npm](https://img.shields.io/npm/dt/storage-function?label=Downloads&logo=npm) [![NPM Publish](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml) [![CodeQL Analyze](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml) [![Build & Test](https://github.com/sametcelikbicak/storage-function/actions/workflows/build-test.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/build-test.yml) ![dependabot](https://img.shields.io/badge/Dependabot-active-g?logo=dependabot)
