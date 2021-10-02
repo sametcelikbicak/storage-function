@@ -1,8 +1,12 @@
+<div align="center">
+
+ <img src="assets/storage-function.svg" alt="Logo">
+
 # Storage Function 
 ![npm](https://img.shields.io/npm/v/storage-function?color=g&label=storage-function&logo=npm) ![npm](https://img.shields.io/npm/dt/storage-function?label=Downloads&logo=npm) [![NPM Publish](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/npm-publish.yml) [![CodeQL Analyze](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/codeql-analysis.yml) [![Build & Test](https://github.com/sametcelikbicak/storage-function/actions/workflows/build-test.yml/badge.svg)](https://github.com/sametcelikbicak/storage-function/actions/workflows/build-test.yml) ![dependabot](https://img.shields.io/badge/Dependabot-active-g?logo=dependabot)
 
 A function to manipulate browser storages. Such as store a key value pair to  session or local storage,  getting  key value pairs from local or session storage.You can check all available functions for more details.
-
+</div>
 
 ## Table of contents
 
