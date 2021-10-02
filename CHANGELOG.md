@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## 2.1.5
+- Fix dependabot issues
 ## 2.1.4
 - Add GitHub action for test
 - Update README
