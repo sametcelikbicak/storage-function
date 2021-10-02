@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## 2.1.6
+- Add logo
 ## 2.1.5
 - Fix dependabot issues
 ## 2.1.4
