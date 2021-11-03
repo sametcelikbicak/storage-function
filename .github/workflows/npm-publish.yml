@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2.3.5
+      uses: actions/checkout@v1
     
     - name: Initialize Node      
       uses: actions/setup-node@v2.4.1
