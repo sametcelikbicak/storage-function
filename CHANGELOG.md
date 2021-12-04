@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## 2.1.8
+- Fix dependabot issues
 ## 2.1.7
 - Fix dependabot issues
 ## 2.1.6
