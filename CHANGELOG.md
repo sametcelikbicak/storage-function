@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## 2.1.10
+- Fix dependabot issues
 ## 2.1.9
 - Update README
 - Deactivate NPM Publish script
