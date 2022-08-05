@@ -1,6 +1,6 @@
 {
   "name": "storage-function",
-  "version": "2022.08.06",
+  "version": "2022.08.05",
   "description": "A function to manipulate browser storages",
   "main": "lib/src/index.js",
   "types": "lib/src/index.d.ts",
