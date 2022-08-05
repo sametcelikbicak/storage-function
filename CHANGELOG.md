@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## v.2022.08.06
+- Change version number to year.month.day instead of major.minor.patch numbers.
 ## 2.1.17
 - Fix dependabot issues
 ## 2.1.16
