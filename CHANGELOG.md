@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## v.2022.10.23
+- Fix dependabot issues
 ## v.2022.09.10
 - Fix dependabot issues
 ## v.2022.08.06
