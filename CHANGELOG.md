@@ -2,6 +2,7 @@
 
 ## new-version
 - Add CODE_OF_CONDUCT file
+- Add CONTRIBUTING file
 
 ## v.2022.10.23
 - Fix dependabot issues
