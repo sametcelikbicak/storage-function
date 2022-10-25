@@ -37,6 +37,8 @@ A function to manipulate browser storages. Such as store a key value pair to  se
   * [getKeys](#getKeys)
   * [getAll](#getAll)
   * [getKeysCount](#getKeysCount)
+
+- #### [Contribute](#contribute)
 <!-- tocstop -->
 
 ## <span id="installation">Installation</span>
@@ -305,3 +307,8 @@ console.log(storageFunction.getKeysCount());
 Result:
 {localStorage: 1, sessionStorage: 1}
 ```
+
+## <span id="contribute">Want to contribute?</span>
+You can read and follow our [CONTRIBUTING.md](CONTRIBUTING.md) and report it using
+[GitHub Issues](https://github.com/sametcelikbicak/storage-function/issues)! for reporting bugs, suggesting enhancements, bugfixes, new features and extras are welcome.
+
