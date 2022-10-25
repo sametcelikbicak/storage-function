@@ -1,5 +1,8 @@
 # storage-function package changes
 
+## new-version
+- Add CODE_OF_CONDUCT file
+
 ## v.2022.10.23
 - Fix dependabot issues
 ## v.2022.09.10
