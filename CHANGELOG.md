@@ -1,5 +1,8 @@
 # storage-function package changes
 
+## New version
+- Add stars badge
+
 ## v.2022.11.11
 - Add CODE_OF_CONDUCT file
 - Add CONTRIBUTING file
