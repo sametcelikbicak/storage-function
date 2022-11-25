@@ -14,42 +14,42 @@ A function to manipulate browser storages. Such as store a key value pair to  se
 
 <!-- toc -->
 - ##### [Installation](#installation)
-- ##### [Breaking Change](#breakingChange)
+- ##### [Breaking Change](#breaking-change)
 - ##### [Usage](#usage)
 - ##### Local Storage functions
-  * [toLocalStorage](#toLocalStorage)
-  * [fromLocalStorage](#fromLocalStorage)
-  * [removeFromLocalStorage](#removeFromLocalStorage)
-  * [clearLocalStorage](#clearLocalStorage)
-  * [getKeysFromLocalStorage](#getKeysFromLocalStorage)
-  * [getAllFromLocalStorage](#getAllFromLocalStorage)
-  * [getKeysCountFromLocalStorage](#getKeysCountFromLocalStorage)
+  * [toLocalStorage](#tolocalstorage-usage)
+  * [fromLocalStorage](#fromlocalstorage-usage)
+  * [removeFromLocalStorage](#removefromlocalstorage-usage)
+  * [clearLocalStorage](#clearlocalstorage-usage)
+  * [getKeysFromLocalStorage](#getkeysfromlocalstorage-usage)
+  * [getAllFromLocalStorage](#getallfromlocalstorage-usage)
+  * [getKeysCountFromLocalStorage](#getkeyscountfromlocalstorage-usage)
 
 - ##### Session Storage functions
-  * [toSessionStorage](#toSessionStorage)
-  * [fromSessionStorage](#fromSessionStorage)
-  * [removeFromSessionStorage](#removeFromSessionStorage)
-  * [clearSessionStorage](#clearSessionStorage)
-  * [getKeysFromSessionStorage](#getKeysFromSessionStorage)
-  * [getAllFromSessionStorage](#getAllFromSessionStorage)
-  * [getKeysCountFromSessionStorage](#getKeysCountFromSessionStorage)
+  * [toSessionStorage](#tosessionstorage-usage)
+  * [fromSessionStorage](#fromsessionstorage-usage)
+  * [removeFromSessionStorage](#removefromsessionstorage-usage)
+  * [clearSessionStorage](#clearsessionstorage-usage)
+  * [getKeysFromSessionStorage](#getkeysfromsessionstorage-usage)
+  * [getAllFromSessionStorage](#getallfromsessionstorage-usage)
+  * [getKeysCountFromSessionStorage](#getkeyscountfromsessionstorage-usage)
 
 - ##### Storage functions
-  * [clearStorage](#clearStorage)
-  * [getKeys](#getKeys)
-  * [getAll](#getAll)
-  * [getKeysCount](#getKeysCount)
+  * [clearStorage](#clearstorage-usage)
+  * [getKeys](#getkeys-usage)
+  * [getAll](#getall-usage)
+  * [getKeysCount](#getkeyscount-usage)
 
-- ##### [Contribute](#contribute)
+- ##### [Contribute](#want-to-contribute)
 <!-- tocstop -->
 
-## <span id="installation">Installation</span>
+## Installation
 
 ```shell
 npm i storage-function
 ```
 
-## <span id="breakingChange">Breaking Change</span>
+## Breaking Change
 Before **2.0.0** version each function should be import itself like below
 ```typescript
 import { toLocalStorage, toSessionStorage } from 'storage-function';
@@ -64,7 +64,7 @@ With **2.0.0** version its enough to just import **storageFunction** then you ca
 import { storageFunction } from 'storage-function';
 ```
 
-## <span id="usage">Usage</span>
+## Usage
 
 #### Local storage key and value definitions
 Sample key and value definition for testing local storage functions.
@@ -80,7 +80,7 @@ const localStorageValue = {
 };
 ```
 
-##### - <span id="toLocalStorage">toLocalStorage usage</span>
+##### - toLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -88,7 +88,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.toLocalStorage(localStorageKey, localStorageValue);
 ```
 
-##### - <span id="fromLocalStorage">fromLocalStorage usage</span>
+##### - fromLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -99,7 +99,7 @@ Result:
 {"name":"object value","stringValue":"string value","booleanValue":true,"numberValue":1234567890,"dateValue":"2021-08-22T15:57:05.147Z"}
 ```
 
-##### - <span id="removeFromLocalStorage">removeFromLocalStorage usage</span>
+##### - removeFromLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -107,7 +107,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.removeFromLocalStorage(localStorageKey);
 ```
 
-##### - <span id="clearLocalStorage">clearLocalStorage usage</span>
+##### - clearLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -118,7 +118,7 @@ const exceptedKeys = ['some_key', 'another_key'];
 storageFunction.clearLocalStorage(exceptedKeys); // Remove all local storage keys except exceptedKeys
 ```
 
-##### - <span id="getKeysFromLocalStorage">getKeysFromLocalStorage usage</span>
+##### - getKeysFromLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -131,7 +131,7 @@ Result:
 1: "localKey1"
 ```
 
-##### - <span id="getAllFromLocalStorage">getAllFromLocalStorage usage</span>
+##### - getAllFromLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -144,7 +144,7 @@ Result:
 1: {localKey1: "\"Local storage value 1\""}
 ```
 
-##### - <span id="getKeysCountFromLocalStorage">getKeysCountFromLocalStorage usage</span>
+##### - getKeysCountFromLocalStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -173,7 +173,7 @@ const sessionStorageValue = {
 };
 ```
 
-##### - <span id="toSessionStorage">toSessionStorage usage</span>
+##### - toSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -181,7 +181,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.toSessionStorage(sessionStorageKey, sessionStorageValue);
 ```
 
-##### - <span id="fromSessionStorage">fromSessionStorage usage</span>
+##### - fromSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -192,7 +192,7 @@ Result:
 {"name":"object value","stringValue":"string value","booleanValue":true,"numberValue":1234567890,"dateValue":"2021-08-22T15:58:28.646Z"}
 ```
 
-##### - <span id="removeFromSessionStorage">removeFromSessionStorage usage</span>
+##### - removeFromSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -200,7 +200,7 @@ import { storageFunction } from 'storage-function';
 storageFunction.removeFromSessionStorage(sessionStorageKey);
 ```
 
-##### - <span id="clearSessionStorage">clearSessionStorage usage</span>
+##### - clearSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -211,7 +211,7 @@ const exceptedKeys = ['key_one', 'keyTwo'];
 storageFunction.clearSessionStorage(exceptedKeys); // Remove all session storage keys except exceptedKeys
 ```
 
-##### - <span id="getKeysFromSessionStorage">getKeysFromSessionStorage usage</span>
+##### - getKeysFromSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -224,7 +224,7 @@ Result:
 1: "sessionKey1"
 ```
 
-##### - <span id="getAllFromSessionStorage">getAllFromSessionStorage usage</span>
+##### - getAllFromSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -237,7 +237,7 @@ Result:
 1: {sessionKey1: "\"Session storage value 1\""}
 ```
 
-##### - <span id="getKeysCountFromSessionStorage">getKeysCountFromSessionStorage usage</span>
+##### - getKeysCountFromSessionStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -255,7 +255,7 @@ Result:
 #### Storage functions definition
 They work with local and session storage.
 
-##### - <span id="clearStorage">clearStorage usage</span>
+##### - clearStorage usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -266,7 +266,7 @@ const exceptedKeys = ['id_token', 'access_token'];
 storageFunction.clearStorage(exceptedKeys); // Remove all storage keys except exceptedKeys
 ```
 
-##### - <span id="getKeys">getKeys usage</span>
+##### - getKeys usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -279,7 +279,7 @@ localStorage: (2) ["localKey2", "localKey1"]
 sessionStorage: (2) ["sessionKey2", "sessionKey1"]
 ```
 
-##### - <span id="getAll">getAll usage</span>
+##### - getAll usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -296,7 +296,7 @@ sessionStorage: Array(2)
 1: {sessionKey1: "\"Session storage value 1\""}
 ```
 
-##### - <span id="getKeysCount">getKeysCount usage</span>
+##### - getKeysCount usage
 
 ```typescript
 import { storageFunction } from 'storage-function';
@@ -310,7 +310,7 @@ Result:
 {localStorage: 1, sessionStorage: 1}
 ```
 
-## <span id="contribute">Want to contribute?</span>
+## Want to contribute?
 You can read and follow our [CONTRIBUTING.md](CONTRIBUTING.md) and report it using
 [GitHub Issues](https://github.com/sametcelikbicak/storage-function/issues)! for reporting bugs, suggesting enhancements, bugfixes, new features and extras are welcome.
 
