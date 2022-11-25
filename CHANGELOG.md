@@ -2,6 +2,7 @@
 
 ## New version
 - Add stars badge
+- Update readme table of content links
 
 ## v.2022.11.11
 - Add CODE_OF_CONDUCT file
