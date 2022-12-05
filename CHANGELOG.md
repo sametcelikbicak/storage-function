@@ -1,18 +1,18 @@
 # storage-function package changes
 
-## New version
+## 2022.12.05
 - Add stars badge
 - Update readme table of content links
-
-## v.2022.11.11
+- Fix dependabot issues
+## 2022.11.11
 - Add CODE_OF_CONDUCT file
 - Add CONTRIBUTING file
 - Update README file
-## v.2022.10.23
+## 2022.10.23
 - Fix dependabot issues
-## v.2022.09.10
+## 2022.09.10
 - Fix dependabot issues
-## v.2022.08.06
+## 2022.08.06
 - Change version number to year.month.day instead of major.minor.patch numbers.
 ## 2.1.17
 - Fix dependabot issues
