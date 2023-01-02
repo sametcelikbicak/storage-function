@@ -1,5 +1,7 @@
 # storage-function package changes
 
+## 2023.1.2
+- Fix dependabot issues
 ## 2022.12.05
 - Add stars badge
 - Update readme table of content links
